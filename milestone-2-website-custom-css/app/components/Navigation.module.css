@@ -1,0 +1,88 @@
+.nav {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.navList {
+  display: flex;
+  list-style-type: none;
+}
+
+.navList li {
+  margin-left: 2rem;
+}
+
+.navList li a {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navList li a:hover,
+.navList li a.active {
+  color: var(--primary-color);
+}
+
+.menuIcon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menuIcon span {
+  height: 2px;
+  width: 25px;
+  background-color: var(--text-color);
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .menuIcon {
+    display: flex;
+  }
+
+  .navList {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .navList.open {
+    display: flex;
+  }
+
+  .navList li {
+    margin: 0;
+    text-align: center;
+  }
+
+  .navList li a {
+    display: block;
+    padding: 1rem;
+  }
+}
+
